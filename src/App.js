@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./App.css";
 import Menu from "./components/Menu";
 import Video from "./components/Video";
+import Footer from "./components/Footer";
 
 const videos = {
   fast: "/videos/react_video-fast.mp4",
@@ -23,6 +24,7 @@ function App() {
       <h1>React Player</h1>
       <Menu onSelectVideo={handleVideoChange} />
       <Video src={video} />
+      <Footer />
     </div>
   );
 }
