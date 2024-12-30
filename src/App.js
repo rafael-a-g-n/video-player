@@ -19,7 +19,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="App">
       <h1>React Player</h1>
       <Menu onSelectVideo={handleVideoChange} />
       <Video src={video} />
