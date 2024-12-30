@@ -5,18 +5,24 @@ import Menu from "./components/Menu";
 import Video from "./components/Video";
 
 const videos = {
-  fast: "./public/videos/react_video-fast.mp4",
-  slow: "./public/videos/react_video-slow.mp4",
-  cute: "./public/videos/react_video-cute.mp4",
-  eek: "./public/videos/react_video-eek.mp4",
+  fast: "/videos/react_video-fast.mp4",
+  slow: "/videos/react_video-slow.mp4",
+  cute: "/videos/react_video-cute.mp4",
+  eek: "/videos/react_video-eek.mp4",
 };
 
 function App() {
+  const [video, setVideo] = useState(videos.fast);
+
+  function handleVideoChange(newVideo) {
+    setVideo(videos[newVideo]);
+  }
+
   return (
     <div>
       <h1>React Player</h1>
-      <Menu />
-      <Video />
+      <Menu onSelectVideo={handleVideoChange} />
+      <Video src={video} />
     </div>
   );
 }
